@@ -5,6 +5,22 @@
 body {
   margin: 0;
   font-size: 30px;
+  background-color: red;
+}
+@media (min-width: 500px) {
+  body {
+    background-color: aqua;
+  }
+}
+@media (min-width: 1000px) {
+  body {
+    background-color: rgb(149, 255, 0);
+  }
+}
+@media (min-width: 1400px) {
+  body {
+    background-color: rgb(105, 10, 213);
+  }
 }
 
 /*!
