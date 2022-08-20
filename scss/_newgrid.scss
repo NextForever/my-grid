@@ -1,3 +1,10 @@
+// максимальная ширина контейнера
+$container-max-width: 1140px !default;
+
+// растояние между элементами
+$grid-gap: 30px !default;
+$grid-gap-side: $grid-gap / 2;
+$grid-colums: 12 !default;
 *,
 *::before,
 *::after {
@@ -21,9 +28,9 @@ body {
 //container
 .container {
   margin: 0 auto;
-  max-width: 1140px;
-  padding-left: 15px;
-  padding-right: 15px;
+  max-width: $container-max-width;
+  padding-left: $grid-gap-side;
+  padding-right: $grid-gap-side;
 
   outline: solid 2px #ddd;
 }
@@ -32,13 +39,26 @@ body {
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin-left: -15px;
-  margin-right: -15px;
-  margin-bottom: 30px;
+  margin-left: -$grid-gap-side;
+  margin-right: -$grid-gap-side;
+  margin-bottom: $grid-gap;
+  > * {
+    margin-left: $grid-gap-side;
+    margin-right: $grid-gap-side;
+  }
 }
 
 .col {
   flex: 1 0 0%;
-  margin-left: 15px;
-  margin-right: 15px;
+}
+
+@mixin col($size) {
+  flex: 0 0 auto;
+  width: calc(#{percentage($size / $grid-colums)} - #{$grid-gap});
+}
+
+@for $i from 1 through $grid-colums {
+  .col-#{$i} {
+    @include col($i);
+  }
 }
