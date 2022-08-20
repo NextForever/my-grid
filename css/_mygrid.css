@@ -15,35 +15,168 @@ body {
   height: 100%;
 }
 
+.container {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+.my-row, .footer, .team, .pricing, .clients, .promo, .header {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-0.5 * var(--bs-gutter-x));
+  margin-left: calc(-0.5 * var(--bs-gutter-x));
+  --bs-gutter-y: 1rem;
+}
+.my-row > *, .footer > *, .team > *, .pricing > *, .clients > *, .promo > *, .header > * {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  margin-top: var(--bs-gutter-y);
+}
+
 .header {
   min-height: 90px;
   margin-bottom: 130px;
-  margin-top: 15px;
+}
+@media (min-width: 768px) {
+  .header__logo {
+    flex: 0 0 auto;
+    width: 25%;
+  }
+  .header__nav {
+    flex: 0 0 auto;
+    width: 75%;
+  }
 }
 
 .promo {
   min-height: 460px;
   margin-bottom: 110px;
 }
+@media (min-width: 768px) {
+  .promo__item {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+}
 
 .clients {
   min-height: 80px;
   margin-bottom: 170px;
+}
+@media (min-width: 576px) {
+  .clients__item {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .clients__item {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+  }
+}
+@media (min-width: 992px) {
+  .clients__item {
+    flex: 0 0 auto;
+    width: 16.66666667%;
+  }
 }
 
 .pricing {
   min-height: 480px;
   margin-bottom: 235px;
 }
+@media (min-width: 768px) {
+  .pricing__item {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+  }
+}
 
 .team {
   min-height: 360px;
   margin-bottom: 180px;
 }
+@media (min-width: 768px) {
+  .team__item {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+}
+@media (min-width: 992px) {
+  .team__item {
+    flex: 0 0 auto;
+    width: 25%;
+  }
+}
 
 .footer {
   min-height: 380px;
   margin-bottom: 50px;
+}
+@media (min-width: 768px) {
+  .footer__social {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+  .footer__contact {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+  .footer__form {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .footer__social {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+  }
+  .footer__contact {
+    flex: 0 0 auto;
+    width: 25%;
+  }
+  .footer__form {
+    flex: 0 0 auto;
+    width: 41.66666667%;
+  }
 }
 
 /*# sourceMappingURL=_mygrid.css.map */
